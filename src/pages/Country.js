@@ -7,7 +7,7 @@ import arrowLeftDarK from "../images/arrow-left-dark.svg";
 import Loading from "../component/Loading";
 
 const Country = ({ match, theme }) => {
-  const selectedCountryId = match.params.id;
+  const selectedCountryId = match.params.id.replace(/_/g, " ");
   const [country, setCountry] = useState([]);
   const [countries, setCountries] = useState([]);
   const [borderNames, setBorderNames] = useState([]);
@@ -15,7 +15,9 @@ const Country = ({ match, theme }) => {
   const [languages, setLanguages] = useState([]);
   const [borders, setBorders] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     let source = axios.CancelToken.source();
     let mounted = true;

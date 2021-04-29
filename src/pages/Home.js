@@ -91,7 +91,7 @@ const Home = () => {
         ) : (
           filteredCountry.map((country) => (
             <Link
-              to={`/country/${country.name.toLowerCase()}`}
+              to={`/country/${country.name.toLowerCase().replace(/ /g, "_")}`}
               key={country.alpha3Code}
             >
               <CountryItem data={country} />
