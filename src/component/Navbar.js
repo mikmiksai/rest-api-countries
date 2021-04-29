@@ -13,9 +13,9 @@ const Navbar = ({ toggleTheme, theme }) => {
           onClick={toggleTheme}
           className="d-flex align-items-center theme-btn"
         >
-          <div className="d-flex align-items-center theme-btn">
+          <span className="d-flex align-items-center theme-btn">
             {theme === "light" ? <MoonRegular /> : <MoonSolid />}
-          </div>{" "}
+          </span>{" "}
           <span>Dark Mode</span>
         </button>
       </div>
